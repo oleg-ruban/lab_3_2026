@@ -10,16 +10,16 @@ LinkedList::~LinkedList() {
 void LinkedList::insertOrUpdate(long long key, const University& value) {
     HashNode* current = head;
     
-    // 1. Ищем, есть ли уже такой ключ
+    // 1. Шукаємо, чи є такий ключ
     while (current != nullptr) {
         if (current->key == key) {
-            current->value = value; // Заменяем значение (как в условии задачи)
+            current->value = value; // Замінюємо значення (як за умови завдання)
             return;
         }
         current = current->next;
     }
 
-    // 2. Если не нашли, добавляем новый узел в начало списка
+    // 2. Якщо не знайшли, додаємо новий вузол на початок списку
     HashNode* newNode = new HashNode(key, value);
     newNode->next = head;
     head = newNode;

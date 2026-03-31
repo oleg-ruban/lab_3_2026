@@ -5,31 +5,31 @@
 
 // Структура вузла хеш-таблиці
 struct HashNode {
-    long long key;       // Уникальный ключ-идентификатор
-    University value;    // Данные об университете
-    HashNode* next;      // Указатель на следующий узел в цепочке
+    long long key;       // Унікальний ключ-ідентифікатор
+    University value;    // Дані про університет
+    HashNode* next;      // Покажчик на наступний вузол у ланцюжку
 
-    // Конструктор для удобного создания узла
+    // Конструктор для зручного створення вузла
     HashNode(long long k, const University& v) 
         : key(k), value(v), next(nullptr) {}
 };
 
-// Класс связанного списка для разрешения коллизий
+// Клас пов'язаного списку для вирішення колізій
 class LinkedList {
 private:
-    HashNode* head;      // Голова списка
-    int count;           // Количество элементов в конкретном списке
+    HashNode* head;      // Голова списку
+    int count;           // Кількість елементів у конкретному списку
 
 public:
     LinkedList();
     ~LinkedList();
 
-    // Основные методы для работы хеш-таблицы
+    // Основні методи для роботи хеш-таблиці
     void insertOrUpdate(long long key, const University& value);
     HashNode* find(long long key) const;
     bool remove(long long key);
     
-    // Вспомогательные методы
+    // Допоміжні методи
     int size() const;
     void clear();
     HashNode* getHead() const { return head; }

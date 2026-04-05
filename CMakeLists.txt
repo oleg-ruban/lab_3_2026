@@ -13,6 +13,8 @@ add_executable(lab_3_2026
         LinkedList.cpp
         ChainHashTableStat.h
         ChainHashTableStat.cpp
+        ChainHashTableDynamic.h
+        ChainHashTableDynamic.cpp
         HashNode.h
         HashNode.cpp
         Testing.cpp

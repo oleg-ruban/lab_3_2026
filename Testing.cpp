@@ -8,8 +8,6 @@
 using namespace std;
 
 bool testHashTable(BaseHashTable* hashTable) {
-    cout << "Запуск тесту для: " << hashTable->getImplementationName() << endl;
-
     const int iters = 500000;
     const int keysAmount = iters * 1;
 
@@ -76,8 +74,7 @@ bool testHashTable(BaseHashTable* hashTable) {
 
     // 4. Виведення результатів
     cout << "--- Результати порівняння ---" << endl;
-    cout << "Результати для тесту: " << hashTable->getImplementationName() << ":" << endl;
-    cout << "Time: " << myTime << "s, size after insert: " << myInsertSize 
+    cout << "Time: " << myTime << "s, size after insert: " << myInsertSize
          << ", after erase: " << myEraseSize << ", found: " << myFoundAmount << endl;
 
     cout << "\nSTL unordered_map:" << endl;

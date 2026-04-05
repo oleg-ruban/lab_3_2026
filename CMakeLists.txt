@@ -12,4 +12,6 @@ add_executable(lab_3_2026
         LinkedList.h
         LinkedList.cpp
         HashTable.h
-        HashTable.cpp)
+        HashTable.cpp
+        HashNode.h
+        HashNode.cpp)

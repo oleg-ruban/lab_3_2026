@@ -1,5 +1,4 @@
 #include "LinkedList.h"
-#include <iostream>
 
 LinkedList::LinkedList() : head(nullptr), count(0) {}
 
@@ -9,7 +8,7 @@ LinkedList::~LinkedList() {
 
 void LinkedList::insertOrUpdate(long long key, const University& value) {
     HashNode* current = head;
-    
+
     // 1. Шукаємо, чи є такий ключ
     while (current != nullptr) {
         if (current->key == key) {

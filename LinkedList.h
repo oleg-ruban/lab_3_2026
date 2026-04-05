@@ -1,18 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-#include "University.h"
-
-// Структура вузла хеш-таблиці
-struct HashNode {
-    long long key;       // Унікальний ключ-ідентифікатор
-    University value;    // Дані про університет
-    HashNode* next;      // Покажчик на наступний вузол у ланцюжку
-
-    // Конструктор для зручного створення вузла
-    HashNode(long long k, const University& v) 
-        : key(k), value(v), next(nullptr) {}
-};
+#include "HashNode.h" // Підключаємо винесений вузол
 
 // Клас пов'язаного списку для вирішення колізій
 class LinkedList {

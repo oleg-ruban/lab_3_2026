@@ -14,4 +14,8 @@ add_executable(lab_3_2026
         HashTable.h
         HashTable.cpp
         HashNode.h
-        HashNode.cpp)
+        HashNode.cpp
+        Testing.cpp
+        Utils.h
+        Utils.cpp
+        Testing.h)

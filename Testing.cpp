@@ -2,12 +2,14 @@
 #include <unordered_map>
 #include <ctime>
 #include "Testing.h"
-#include "HashTable.h"
+#include "BaseHashTable.h"
 #include "Utils.h"
 
 using namespace std;
 
-bool testHashTable() {
+bool testHashTable(BaseHashTable* hashTable) {
+    cout << "Запуск тесту для: " << hashTable->getImplementationName() << endl;
+
     const int iters = 500000;
     const int keysAmount = iters * 1;
 
@@ -28,22 +30,21 @@ bool testHashTable() {
     }
 
     // 2. Тестування ВЛАСНОЇ HashTable
-    HashTable hashTable; // Початковий розмір буде маленьким, спрацює рехешування
     clock_t myStart = clock();
 
     for (int i = 0; i < iters; i++) {
-        hashTable.insert(keysToInsert[i], University()); // Використовуємо University
+        hashTable->insert(keysToInsert[i], University()); // Використовуємо University
     }
-    int myInsertSize = hashTable.size();
+    int myInsertSize = hashTable->size();
 
     for (int i = 0; i < iters; i++) {
-        hashTable.erase(keysToErase[i]);
+        hashTable->erase(keysToErase[i]);
     }
-    int myEraseSize = hashTable.size();
+    int myEraseSize = hashTable->size();
 
     int myFoundAmount = 0;
     for (int i = 0; i < iters; i++) {
-        if (hashTable.find(keysToFind[i]) != nullptr) {
+        if (hashTable->find(keysToFind[i]) != nullptr) {
             myFoundAmount++;
         }
     }
@@ -75,7 +76,7 @@ bool testHashTable() {
 
     // 4. Виведення результатів
     cout << "--- Результати порівняння ---" << endl;
-    cout << "My HashTable:" << endl;
+    cout << "Результати для тесту: " << hashTable->getImplementationName() << ":" << endl;
     cout << "Time: " << myTime << "s, size after insert: " << myInsertSize 
          << ", after erase: " << myEraseSize << ", found: " << myFoundAmount << endl;
 

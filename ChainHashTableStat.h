@@ -1,11 +1,12 @@
-#ifndef HASHTABLE_H
-#define HASHTABLE_H
+#ifndef CHAINHASHTABLESTAT_H
+#define CHAINHASHTABLESTAT_H
 
+#include "BaseHashTable.h"
 #include "LinkedList.h"
 #include "University.h"
 
 // Клас Хеш-таблиці з методом ланцюжків
-class HashTable {
+class ChainHashTableStat : public BaseHashTable {
 private:
     static const int M = 10000;      // Розмір масиву бакетів (ячейок)
     LinkedList bucketsArray[M];      // Масив зв’язних списків
@@ -15,7 +16,7 @@ private:
     int hash(long long key) const;
 
 public:
-    HashTable();
+    ChainHashTableStat();
 
     // Додавання значення за ключем (або заміна, якщо ключ вже існує)
     void insert(long long key, const University& value);

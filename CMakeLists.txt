@@ -11,11 +11,12 @@ add_executable(lab_3_2026
         University.cpp
         LinkedList.h
         LinkedList.cpp
-        HashTable.h
-        HashTable.cpp
+        ChainHashTableStat.h
+        ChainHashTableStat.cpp
         HashNode.h
         HashNode.cpp
         Testing.cpp
         Utils.h
         Utils.cpp
-        Testing.h)
+        Testing.h
+        BaseHashTable.h)

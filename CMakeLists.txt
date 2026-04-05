@@ -10,4 +10,6 @@ add_executable(lab_3_2026
         University.h
         University.cpp
         LinkedList.h
-        LinkedList.cpp)
+        LinkedList.cpp
+        HashTable.h
+        HashTable.cpp)

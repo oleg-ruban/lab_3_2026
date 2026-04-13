@@ -5,6 +5,7 @@
 #include "ChainHashTableDynamic.h"
 #include "MultiplicationHashTable.h"
 #include "XorShiftHashTable.h"
+#include "OpenAddressingHashTable.h"
 
 using namespace std;
 
@@ -13,15 +14,16 @@ int main() {
     // system("chcp 65001");
 
     // 2. Створюємо екземпляри всіх наших реалізацій
-    ChainHashTableStat table1;
-    ChainHashTableDynamic table2;
-    MultiplicationHashTable table3;
-    XorShiftHashTable table4;
+    ChainHashTableStat staticChain;
+    ChainHashTableDynamic dynamicChain;
+    MultiplicationHashTable staticMultiplication;
+    XorShiftHashTable staticXor;
+    OpenAddressingHashTable openAddressing;
 
     // 3. Збираємо їх у вектор вказівників на базовий клас
     // Це і є поліморфізм у дії: ми працюємо з різними об'єктами через спільний інтерфейс
     vector<BaseHashTable*> implementations = {
-        &table1, &table2, &table3, &table4
+        &staticChain, &dynamicChain, &staticMultiplication, &staticXor, &openAddressing
     };
 
     cout << "==========================================" << endl;

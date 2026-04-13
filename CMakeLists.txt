@@ -23,4 +23,6 @@ add_executable(lab_3_2026
         Testing.h
         BaseHashTable.h
         MultiplicationHashTable.h
-        XorShiftHashTable.h)
+        XorShiftHashTable.h
+        OpenAddressingHashTable.h
+        OpenAddressingHashTable.cpp)

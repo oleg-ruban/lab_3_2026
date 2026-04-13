@@ -5,13 +5,13 @@
 #include "LinkedList.h"
 
 class ChainHashTableDynamic : public BaseHashTable {
-private:
+protected:
     LinkedList* bucketsArray;        // Динамічний масив списків
     int M;                           // Поточний розмір масиву
     int count;                       // Кількість елементів
     const double maxLoadFactor = 0.75;
 
-    int hash(long long key) const;
+    virtual int hash(long long key) const;
     void rehash();
 
 public:

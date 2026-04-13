@@ -21,4 +21,6 @@ add_executable(lab_3_2026
         Utils.h
         Utils.cpp
         Testing.h
-        BaseHashTable.h)
+        BaseHashTable.h
+        MultiplicationHashTable.h
+        XorShiftHashTable.h)
